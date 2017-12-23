@@ -1,12 +1,16 @@
-# Untitled boardgame back end
+# Board game back-end
 
 [Travis CI badge] [Codecov badge] [TypeScript badge] [Open source badge] [GPLv3 license badge]
 
 ## Introduction
 
-This repository contains source code for an untitled board game. The game has a board consisting of 33 holes which of 32 are filled with pieces, leaving the center hole empty. The goal is to empty the board by moving the pieces over one another.
+This repository contains source code for an untitled board game's back-end.
+
+The game has a board consisting of 33 holes which of 32 are filled with pieces, leaving the center hole empty. The goal is to empty the board by moving the pieces over one another.
 
 Coded with TypeScript, strict TSLint rules and Mocha as a testing framework.
+
+Back-end will function as a Websocket server that hosts games played in the browser. It will validate user's moves and update the board when wanted.
 
 # Picture of the board
 
