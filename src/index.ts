@@ -1,7 +1,7 @@
 import * as readline from 'readline';
 
 // Initial board position
-let board = [
+let board: number[][] = [
     [2, 2, 1, 1, 1, 2, 2],
     [2, 2, 1, 1, 1, 2, 2],
     [1, 1, 1, 1, 1, 1, 1],
@@ -108,12 +108,6 @@ function inBoard(board: number[][], x: number, y: number): boolean {
     return !(x > board[0].length - 1 || x < 0 || y >= board.length || y < 0);
 }
 
-//x,y
-/*
-console.log(validMove(board, 3, 1, MovingDirection.RIGHT)); // true
-console.log(validMove(board, 5, 3, MovingDirection.LEFT)); // true
-*/
-
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
@@ -123,7 +117,7 @@ var ask = function () {
     board.forEach((boardRow: number[]) => {
         console.log(boardRow);
     });
-    rl.question('choose x,y:', (answer: string) => {
+    rl.question('choose x,y :', (answer: string) => {
         let input: string[] = answer.split(',');
         if (input.length < 2) {
             console.error('Invalid coordinates!');
@@ -131,7 +125,7 @@ var ask = function () {
         } else {
             let x: number = parseInt(input[0]);
             let y: number = parseInt(input[1]);
-            rl.question('choose direction:', (answer: string) => {
+            rl.question('choose direction (up,down,left,right) :', (answer: string) => {
                 let tmpDirection: string = answer.toLowerCase();
                 let direction: MovingDirection = MovingDirection.UP;
                 switch (tmpDirection) {
